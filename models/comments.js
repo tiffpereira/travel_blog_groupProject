@@ -4,12 +4,15 @@ const Schema  = mongoose.Schema
 
 const Comments = new Schema(
     {
-        id_number: {type: String, required: true},
-        title: {type: String, required: true},
-        description: {type: String, required: true},
+        _id: {type: Schema.Types.ObjectId, default: null},
+        name: {type: String, required: true},
+        comment: {type: String, required: true},
         rating: {type: String, required: true},
+        recomendation: {type: String, required: true},
+        comments: {type: String, required: true}
     },
+
     {timestamps: true}
 )
 
-module.exports = mongoose.model('comments', Comments)
+module.exports = Comments
