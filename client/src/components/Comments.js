@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { LoadComments } from '../store/actions/PostActions'
 import { useParams } from 'react-router-dom'
@@ -10,7 +9,7 @@ const mapStateToProps = ({ commentState }) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchComments: () => dispatch(LoadComments())
+        fetchComments: (id) => dispatch(LoadComments(id))
     }
 }
 

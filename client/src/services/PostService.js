@@ -20,3 +20,13 @@ export const GetComments = async (id) => {
         throw error
     }
 }
+
+export const PostComments = async (id) => {
+  try {
+    const res = await Client.post(`/posts/${id}`)
+    console.log(res, 'posting comments')
+    return res.data.comments
+  } catch (error) {
+    throw error
+  }
+}
